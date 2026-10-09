@@ -1,7 +1,7 @@
 'use strict';
 
 // Teams des Hobbyturniers
-const TEAMS = ['FC Linden', 'SV Nordstadt', 'TSV Döhren', 'SC liST'];
+const TEAMS = ['FC Linden', 'SV Nordstadt', 'TSV Döhren', 'SC List'];
 
 // Startdaten: bereits  gespielte Partien
 const INITIAL_MATCHES = [
