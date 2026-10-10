@@ -35,6 +35,41 @@
                 <tbody id="standings-body"></tbody>
             </table>
         </section>
+        
+        <section class="form-section">
+            <h2 class="form-section__title">Spiel hinzufügen</h2>
+            <form class="match-form" id="match-form" novalidate>
+                <div class="match-form__field">
+                    <label for="match-date">Datum</label>
+                    <input type="date" id="match-date" name="date">
+                </div>
+
+                <div class="match-form__field">
+                    <label for="match-home">Heim</label>
+                    <select id="match-home" name="home"></select>
+                </div>
+
+                <div class="match-form__field">
+                    <label for="match-home-goals">Tore Heim</label>
+                    <input type="number" id="match-home-goals" name="homeGoals" min="0" step="1">
+                </div>
+
+                <div class="match-form__field">
+                    <label for="match-away-goals">Tore Gast</label>
+                    <input type="number" id="match-away-goals" name="awayGoals" min="0" step="1">
+                </div>
+
+                <div class="match-form__fields">
+                    <label for="match-away"></label>
+                    <select name="away" id="match-away"></select>
+                </div>
+
+                <button type="submit" class="match-form__submit">Spiel speichern</button>
+
+                <ul class="match-form__messages" id="form-messages" aria-live="polite"></ul>
+            </form>
+        </section>
+
         <section class="matches">
             <h2 class="matches__title">Spiele</h2>
             <ul class="matches__list" id="match-list"></ul>

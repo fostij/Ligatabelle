@@ -74,3 +74,32 @@ function renderMatches(matches) {
     });
 
 }
+
+// Erzeugt einen Eitrag für ein Auswahlfeld
+function createOption(text, value) {
+    const option = document.createElement('option');
+    option.textContent = text;
+    option.value = value;
+    return option;
+}
+
+// Füllt ein Auswahlfeld mit allen Teams
+function fillTeamSelect(select, teams) {
+    select.innerHTML = '';
+    select.append(createOption('Team wählen', ''));
+
+    teams.forEach((team) => {
+        select.append(createOption(team, team));
+    });
+}
+
+// Zeigt Rückmeldungen zum Formular an (type: 'error' oder 'success') 
+function showFormMessages(messages, type) {
+    const list = document.querySelector('#form-messages');
+    list.innerHTML = '';
+
+    messages.forEach((message) => {
+        const className = `match-form__message match-form__message--${type}`;
+        list.append(createTextElement('li', className, message));
+    });
+}
