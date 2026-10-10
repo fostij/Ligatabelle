@@ -6,10 +6,36 @@
     <title>Ligatabelle - Hobbyturnier</title>
     <script src="js/data.js" defer></script>
     <script src="js/league.js" defer></script>
+    <script src="js/ui.js" defer></script>
     <script src="js/app.js" defer></script>
 </head>
 <body>
-    <h1>Ligatabelle</h1>
+    <header class="header">
+        <h1 class="header__title">Ligatabelle</h1>
+        <p class="header__subtitle">Hobbyturnier Hannover 2026</p>
+    </header>
+
+    <main class="main">
+        <section class="standings">
+            <h2 class="standings__title">Tabelle</h2>
+            <table class="standings__table">
+                <thead>
+                    <tr>
+                        <th>Platz</th>
+                        <th>Team</th>
+                        <th>Sp.</th>
+                        <th>S</th>
+                        <th>U</th>
+                        <th>N</th>
+                        <th>Tore</th>
+                        <th>Diff.</th>
+                        <th>Pkt.</th>
+                    </tr>
+                </thead>
+                <tbody id="standings-body"></tbody>
+            </table>
+        </section>
+    </main>
     
 </body>
 </html>
