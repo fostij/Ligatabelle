@@ -70,3 +70,36 @@ function calculateStandings(teams, matches) {
 
     return Object.values(rows).sort(compareRows);
 }
+
+// Prüft, ob eine Toranzahl gültig ist
+function isValidGoals(goals) {
+    return Number.isInteger(goals) && goals >= 0;
+}
+
+// Prüft ein neues Spiel und gibt eine Liste von Fehlermeldung zurück
+function validateMatch(match, matches) {
+    const errors = [];
+
+    if (match.date === '') {
+        errors.push('Bitte ein Datum wählen');
+    }
+
+    if (match.home === '' || match.away === '') {
+        errors.push('Bitte beide Teams wählen');
+    } else if (match.home === match.away) {
+        errors.push('Ein Team kann nicht gegen sich selbst spielen.');
+    }
+
+    if (!isValidGoals(match.homeGoals) || !isValidGoals(match.awayGoals)) {
+        errors.push('Tore müssen ganze Zahlen ab 0 sein.');
+    }
+
+    const isDuplicate = matches.some(
+        (other) => other.home === match.home && other.away === match.away
+    );
+    if (isDuplicate) {
+        errors.push('Diese Partie wurde bereits eingetragen.');
+    }
+
+    return errors;
+}
