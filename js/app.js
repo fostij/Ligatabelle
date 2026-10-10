@@ -11,6 +11,7 @@ function render() {
     const standings = calculateStandings(TEAMS, matches);
     // console.table(standings);
     renderStandings(standings);
+    renderMatches(matches);
 }
 
 render();
