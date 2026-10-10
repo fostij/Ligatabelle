@@ -12,5 +12,5 @@ const INITIAL_MATCHES = [
     { id: 5, date: '19-09-2026', home: 'SC List', away: 'FC Linden', homeGoals: 2, awayGoals: 2 },
     { id: 6, date: '19-09-2026', home: 'SV Nordstadt', away: 'TSV Döhren', homeGoals: 4, awayGoals: 0 },
     { id: 7, date: '26-09-2026', home: 'SV Nordstadt', away: 'FC Linden', homeGoals: 1, awayGoals: 0 },
-    { id: 8, date: '26-09-2026', home: 'SC List', away: 'TSV Döhren', homeGoals: 3, awayGoals: 2}
+    { id: 8, date: '26-09-2026', home: 'SC List', away: 'TSV Döhren', homeGoals: 3, awayGoals: 2 }
 ];
