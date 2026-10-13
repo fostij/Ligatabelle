@@ -1,9 +1,12 @@
 'use strict';
 
 // Erzeugt eine Tabellenzelle mit Text
-function createCell(text) {
+function createCell(text, className) {
     const cell = document.createElement('td');
     cell.textContent = text;
+    if (className) {
+        cell.className = className;
+    }
     return cell;
 }
 
@@ -37,17 +40,23 @@ function renderStandings(standings) {
     standings.forEach((row, index) => {
         const tr = document.createElement('tr');
 
+        // Tabellenführer und Schlusslicht markieren
+        if (index === 0) {
+            tr.classList.add('standings__row--leader');
+        } else if (index === standings.length - 1) {
+            tr.classList.add('standings__row--last');
+        }
+
         tr.append(
             createCell(index + 1),
-            createCell(row.team),
+            createCell(row.team, 'standings__team'),
             createCell(row.played),
             createCell(row.wins),
             createCell(row.draws),
             createCell(row.losses),
             createCell(`${row.goalsFor}:${row.goalsAgainst}`),
             createCell(formatGoalDifference(row.goalDifference)),
-            createCell(row.points)
-
+            createCell(row.points, 'standings__points')
         );
 
         body.append(tr);
@@ -113,4 +122,20 @@ function showFormMessages(messages, type) {
 function renderMatchCount(visibleCount, totalCount) {
     const counter = document.querySelector('#match-count');
     counter.textContent = `${visibleCount} von ${totalCount} Spielen`;
+}
+
+// Namensraum für SVG-Elemente
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+// Erzeugt ein Icon aus der Icon-Sammlung in index.html
+function createIcon(name) {
+    const svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('class', 'icon');
+    svg.setAttribute('aria-hidden', 'true');
+
+    const use = document.createElementNS(SVG_NS, 'use');
+    use.setAttribute('href', `#icon-${name}`);
+
+    svg.append(use);
+    return svg;
 }

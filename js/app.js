@@ -47,6 +47,7 @@ function handleSubmit(event) {
 
     if (errors.length > 0) {
         showFormMessages(errors, 'error');
+        showToast('Bitte prüfe deine Eingaben.', 'error');
         return;
     }
 
@@ -54,7 +55,11 @@ function handleSubmit(event) {
     matches.push(newMatch);
 
     matchForm.reset();
-    showFormMessages(['Spiel wurde gespeichert.'], 'succes');
+    showFormMessages([], 'success');
+    showToast(
+        `Spiel gespeichert: ${newMatch.home} ${newMatch.homeGoals}:${newMatch.awayGoals} ${newMatch.away}`,
+        'success'
+    );
     render();
 }
 
