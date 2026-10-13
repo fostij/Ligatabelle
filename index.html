@@ -72,6 +72,22 @@
 
         <section class="matches">
             <h2 class="matches__title">Spiele</h2>
+            <div class="matches__controls">
+                <div class="matches__control">
+                    <label for="search-text">Suche</label>
+                    <input type="search" id="search-text" placeholder="Team suchen ...">
+                </div>
+                <div class="matches__control">
+                    <label for="filter-result">Ergebnis</label>
+                    <select id="filter-result">
+                        <option value="all">Alle Ergebnisse</option>
+                        <option value="home">Heimsieg</option>
+                        <option value="draw">Unentschieden</option>
+                        <option value="away">Auswärtssieg</option>
+                    </select>
+                </div>
+            </div>
+            <p class="matches__count" id="match-count"></p>
             <ul class="matches__list" id="match-list"></ul>
         </section>
     </main>

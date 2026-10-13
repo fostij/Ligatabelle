@@ -103,3 +103,35 @@ function validateMatch(match, matches) {
 
     return errors;
 }
+
+// Vereinheitlicht Text für den Vergleich: ohne Leerzeichen am Rand, klein geschrieben
+function normalizeText(text) {
+    return text.trim().toLowerCase();
+}
+
+// Bestimmt den Ausgang eines Spiels: 'home', 'draw', oder 'away'
+function getResultType(match) {
+    if (match.homeGoals > match.awayGoals) {
+        return 'home';
+    }
+    if (match.homeGoals < match.awayGoals) {
+        return 'away';
+    }
+    return 'draw';
+}
+
+// Filtert Spiele nach Suchtext und Ergebnis, neueste zuerst
+function filterMatches(matches, searchText, resultType) {
+    const search = normalizeText(searchText);
+
+    const visible = matches.filter((match) => {
+        const teamNames = normalizeText(`${match.home} ${match.away}`);
+        const matchesSearch = teamNames.includes(search);
+        const matchesResult = resultType === 'all' || getResultType(match) === resultType;
+
+        return matchesSearch && matchesResult;
+    });
+
+    return visible.sort((a, b) => b.date.localeCompare(a.date));
+}
+

@@ -59,6 +59,11 @@ function renderMatches(matches) {
     const list = document.querySelector('#match-list');
     list.innerHTML = '';
 
+    if (matches.length === 0) {
+        list.append(createTextElement('li', 'matches__empty', 'Keine Spiele gefunden.'));
+        return;
+    }
+
     matches.forEach((match) => {
         const item = document.createElement('li');
         item.className = 'match';
@@ -102,4 +107,10 @@ function showFormMessages(messages, type) {
         const className = `match-form__message match-form__message--${type}`;
         list.append(createTextElement('li', className, message));
     });
+}
+
+// Zeigt an, wie viele Spiele sichtbar sind
+function renderMatchCount(visibleCount, totalCount) {
+    const counter = document.querySelector('#match-count');
+    counter.textContent = `${visibleCount} von ${totalCount} Spielen`;
 }
