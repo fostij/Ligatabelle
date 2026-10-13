@@ -30,7 +30,7 @@ Abschlussprojekt im Modul **Frontend-Programmierung mit JavaScript** an der Hoch
 
 Die App verwaltet die Spiele eines Turniers mit vier Teams. Jedes Spiel besteht aus Datum, Heimteam, Gastteam und den Toren beider Teams.
 
-Die Tabelle wirdl **Frontend-Programmie sondern bei jeder Änderung neu aus allen Spielen berechnet. Dadurch passen Tabelle und Spiele immer zusammen.
+Die Tabelle wird **nicht gespeichert**, sondern bei jeder Änderung neu aus allen Spielen berechnet. Dadurch passen Tabelle und Spiele immer zusammen.
 
 ---
 
@@ -38,25 +38,24 @@ Die Tabelle wirdl **Frontend-Programmie sondern bei jeder Änderung neu aus alle
 
 | Feature | Beschreibung |
 |---|---|
-| 📊?logo=css3&lo| Platz, Spiele, Siege, Unentschieden, Niederlagen, Tore, Tordifferenz, Punkte |
-| 🔢TML5-E34F26?logo=html5&logoCo| nach Punkten, Tordifferenz, erzielten Toren und Name |
-| 🥇//img.shields.io/b| Tabellenführer (gold) und Schlusslicht (rot) |
-| 📅](https://img.sh| alle Partien mit Datum und Ergebnis, neueste zuerst |
-| ➕s://img.shields.io/bad| Formular mit Validierung und Fehlermeldungen |
-| 🔍](https://i| nach Teamnamen, unabhängig von Groß-/Kleinschreibung und Leerzeichen |
-| 🎯/badge/HTML5| nach Ergebnis: Heimsieg, Unentschieden, Auswärtssieg |
-| 🔔//img.shield| eigene Benachrichtigungen bei Erfolg und Fehler |
-| 🎨ttps://img.shields.io/| ohne Icon-Bibliothek |
-| 📱r Hannover 2026
-| funktioniert auf Desktop, Tablet und Smartphone |
+| 📊 **Tabelle** | Platz, Spiele, Siege, Unentschieden, Niederlagen, Tore, Tordifferenz, Punkte |
+| 🔢 **Automatische Sortierung** | nach Punkten, Tordifferenz, erzielten Toren und Name |
+| 🥇 **Markierungen** | Tabellenführer (gold) und Schlusslicht (rot) |
+| 📅 **Spielliste** | alle Partien mit Datum und Ergebnis, neueste zuerst |
+| ➕ **Spiel hinzufügen** | Formular mit Validierung und Fehlermeldungen |
+| 🔍 **Suche** | nach Teamnamen, unabhängig von Groß-/Kleinschreibung und Leerzeichen |
+| 🎯 **Filter** | nach Ergebnis: Heimsieg, Unentschieden, Auswärtssieg |
+| 🔔 **Toasts** | eigene Benachrichtigungen bei Erfolg und Fehler |
+| 🎨 **Eigene SVG-Icons** | ohne Icon-Bibliothek |
+| 📱 **Responsive** | funktioniert auf Desktop, Tablet und Smartphone |
 
 ---
 
 ## 🛠️ Tech-Stack
 
--badge/HTML5– semantische Struktur, Formular
--nover 2026– Grid, Flexbox, CSS-Variablen, Animationen, BEM-Namenskonvention
--shields.io/badge/HTML5-– DOM-Manipulation, Events, Array-Methoden, Formularauswertung mit `FormData`
+- **HTML5** – semantische Struktur, Formular
+- **CSS3** – Grid, Flexbox, CSS-Variablen, Animationen, BEM-Namenskonvention
+- **JavaScript (ES6+)** – DOM-Manipulation, Events, Array-Methoden, `FormData`
 
 Keine Bibliotheken, kein Framework, keine externen Ressourcen.
 
@@ -65,45 +64,56 @@ Keine Bibliotheken, kein Framework, keine externen Ressourcen.
 ## 🚀 Starten
 
 1. Projektordner entpacken
-2.adge/CSS3-1572per Doppelklick im Browser öffnen
+2. `index.html` per Doppelklick im Browser öffnen
 
 Ein Server oder eine Installation ist nicht nötig.
 
 ---
 
 ## 🖱️ Bedienung
-ogoColor=white)
-![CSS
+
+**Spiel eintragen**
+
 1. Datum wählen
 2. Heim- und Gastteam aus der Liste wählen
 3. Tore beider Teams eingeben
-4. Auf?logo=html5&logoColorklicken
+4. Auf **Spiel speichern** klicken
 
 Die Tabelle wird sofort neu berechnet, eine Benachrichtigung bestätigt das Speichern.
-6?logo=html5&logoColor=w
-- Im Feldbelle – Hobeinen Teamnamen eingeben, z. B.Hannover 2- Im Feldabelle – Hobbynach Heimsieg, Unentschieden oder Auswärtssieg filtern
+
+**Spiele durchsuchen**
+
+- Im Feld **Suche** einen Teamnamen eingeben, z. B. `linden`
+- Im Feld **Ergebnis** nach Heimsieg, Unentschieden oder Auswärtssieg filtern
 - Suche und Filter lassen sich kombinieren; die Tabelle bleibt dabei unverändert
 
 ---
 
 ## 🧮 Fachlogik
-dge/CSS3-1572B6?log
+
+**Punktevergabe**
+
 | Ergebnis | Punkte |
 |---|---|
 | Sieg | 3 |
 | Unentschieden | 1 |
 | Niederlage | 0 |
-L5-E34F26?logo=html5&logoCol
+
+**Berechnung der Tabelle**
+
 1. Für jedes Team wird eine leere Tabellenzeile angelegt.
 2. Jedes Spiel wird zweimal eingetragen: aus Sicht des Heimteams und aus Sicht des Gastteams.
 3. Die Zeilen werden sortiert.
-logoColor=white)
-![JavaScript](https
+
+**Sortierung bei Punktgleichheit**
+
 1. Punkte
 2. Tordifferenz
 3. Erzielte Tore
 4. Teamname (alphabetisch)
-lds.io/badge/HTML5-E34F26?logo=
+
+**Validierung des Formulars**
+
 - Datum ist Pflicht
 - Beide Teams müssen gewählt sein
 - Ein Team kann nicht gegen sich selbst spielen
@@ -113,19 +123,22 @@ lds.io/badge/HTML5-E34F26?logo=
 ---
 
 ## 📁 Projektstruktur
-aScript-F7DF1E?logo=javascript&logoColor=black)
-![Ohne Frameworks](https://img.shields.io/badge/Frameworks-keine-1b6e34)
 
-Eine kleine Web-App, die aus eingetragenen Spielergebnissen automatisch die Tabelle eines Hobbyturniers berechnet und sortiert.
+```
+ligatabelle/
+├── index.html        # Seitenstruktur und SVG-Icons
+├── README.md
+├── css/
+│   └── style.css     # Gestaltung
+└── js/
+    ├── data.js       # Teams und Startdaten (8 Spiele)
+    ├── league.js     # Fachlogik: Tabelle, Validierung, Filter
+    ├── ui.js         # Ausgabe im DOM
+    ├── toast.js      # Benachrichtigungen
+    └── app.js        # Zustand, Events, Start der App
+```
 
-Abschlussprojekt im Modul **Frontend-Programmierung mit JavaScript** an der Hochschule Hannover.
-
----
-
-## 📋 Inhalt
-- [Projektübersicht](#-projekt# ⚽ Ligatabelle – Hobbyturni# ⚽ Ligataberechnet und greift nicht auf das DOM zu,2026
-
-![Hzeigt nur an,le – Hobbyverbindet beides.
+**Trennung der Aufgaben:** `league.js` rechnet und greift nicht auf das DOM zu, `ui.js` zeigt nur an, `app.js` verbindet beides.
 
 ---
 
@@ -136,16 +149,21 @@ Abschlussprojekt im Modul **Frontend-Programmierung mit JavaScript** an der Hoch
 ---
 
 ## 🤖 KI-Nutzung
-r=white)
-![CSS3Claude (Anthropic)
-obbyturnier 
+
+**Werkzeug:** Claude (Anthropic)
+
+**Wofür:**
+
 - Code-Vorschläge für komplexere Aufgaben, die ich selbst umgesetzt und getestet habe
 - Erklärung von Konzepten, die mir unklar waren
+- Hilfe bei der Fehlersuche
 
 ---
 
 ## 👤 Autor
-s3&logoColor=whitHochschule Hannover
+
+**Oleg Fostij**
+Hochschule Hannover – Fakultät III, Medien, Information und Design
 Modul: Frontend-Programmierung mit JavaScript
 Dozent: Patrick Baudach
 
