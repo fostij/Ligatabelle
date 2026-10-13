@@ -163,7 +163,9 @@ ligatabelle/
 
 **Oleh Fostii**
 Hochschule Hannover
+
 Modul: Frontend-Programmierung mit JavaScript
+
 Dozent: Patrick Baudach
 
 Studienprojekt, Oktober 2026
