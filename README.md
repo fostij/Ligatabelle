@@ -156,14 +156,13 @@ ligatabelle/
 
 - Code-Vorschläge für komplexere Aufgaben, die ich selbst umgesetzt und getestet habe
 - Erklärung von Konzepten, die mir unklar waren
-- Hilfe bei der Fehlersuche
 
 ---
 
 ## 👤 Autor
 
-**Oleg Fostij**
-Hochschule Hannover – Fakultät III, Medien, Information und Design
+**Oleh Fostii**
+Hochschule Hannover
 Modul: Frontend-Programmierung mit JavaScript
 Dozent: Patrick Baudach
 
