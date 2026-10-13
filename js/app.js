@@ -19,16 +19,21 @@ function render() {
     renderMatchCount(visibleMatches.length, matches.length);
 }
 
+// Wandelt eine Eingabe in eine Zahl um. Ein leeres Feld ergibt NaN
+function toNumber(value) {
+    return value === '' ? NaN : Number(value);
+}
+
 // Liest die Eingaben aus dem Formular
 function readMatchForm() {
-    const fields = matchForm.elements;
+    const formData = new FormData(matchForm);
 
     return {
-        date: fields.date.value,
-        home: fields.home.value,
-        away: fields.away.value,
-        homeGoals: fields.homeGoals.valueAsNumber,
-        awayGoals: fields.awayGoals.valueAsNumber, 
+        date: formData.get('date'),
+        home: formData.get('home'),
+        away: formData.get('away'),
+        homeGoals: toNumber(formData.get('homeGoals')),
+        awayGoals: toNumber(formData.get('awayGoals')), 
 
     }; // Object mit Daten von Form
 }

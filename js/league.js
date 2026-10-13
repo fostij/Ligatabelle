@@ -27,7 +27,7 @@ function addResult(row, goalsFor, goalsAgainst) {
     row.goalDifference = row.goalsFor - row.goalsAgainst;
 
     if (goalsFor > goalsAgainst) {
-        row.wins +=1;
+        row.wins += 1;
         row.points += POINTS_WIN;
     } else if (goalsFor === goalsAgainst) {
         row.draws += 1;
