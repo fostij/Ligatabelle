@@ -3,7 +3,7 @@
 // Teams des Hobbyturniers
 const TEAMS = ['FC Linden', 'SV Nordstadt', 'TSV Döhren', 'SC List'];
 
-// Startdaten: bereits  gespielte Partien
+// Startdaten bereits  gespielte Partien
 const INITIAL_MATCHES = [
     { id: 1, date: '2026-09-05', home: 'FC Linden', away: 'SV Nordstadt', homeGoals: 2, awayGoals: 1 },
     { id: 2, date: '2026-09-05', home: 'TSV Döhren', away: 'SC List', homeGoals: 0, awayGoals: 0 },
