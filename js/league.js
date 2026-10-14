@@ -37,7 +37,7 @@ function addResult(row, goalsFor, goalsAgainst) {
     }
 }
 
-/* Sortierrgel: Punkte,  dann Tordifferenz, dann erzielte Tore, dann Name */
+/* Sortierrgel: Punkte, dann Tordifferenz, dann erzielte Tore, dann Name */
 function compareRows(a, b) {
     if (a.points !== b.points) return b.points - a.points;
     if (a.goalDifference !== b.goalDifference) return b.goalDifference - a.goalDifference;
@@ -46,14 +46,7 @@ function compareRows(a, b) {
     return a.team.localeCompare(b.team, 'de');
 }
 
-/**
- * Berechnet die sortierte Tabelle aus allen Spielen.
- * 
- * @param {string[]} teams - Namen aller Teams
- * @param {object[]} matches - Alle gespielten Partien
- * @returns {object[]} Tabellenzeilen, bester Platz zuerst
-*/
-
+/* Berechnet die sortierte Tabelle aus allen Spielen. */
 function calculateStandings(teams, matches) {
     const rows = {};
 

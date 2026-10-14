@@ -53,9 +53,27 @@ Die Tabelle wird **nicht gespeichert**, sondern bei jeder Änderung neu aus alle
 
 ## 🛠️ Tech-Stack
 
-- **HTML5** – semantische Struktur, Formular
-- **CSS3** – Grid, Flexbox, CSS-Variablen, Animationen, BEM-Namenskonvention
-- **JavaScript (ES6+)** – DOM-Manipulation, Events, Array-Methoden, `FormData`
+**HTML5**
+- Semantische Struktur: `header`, `main`, `section`, `table`
+- Formular mit `label`, `input type="date"` / `"number"`, `select`, eigene Validierung (`novalidate`)
+- Eigene SVG-Icons mit `<symbol>` und `<use>`
+- Barrierefreiheit: `aria-live`, `aria-label`, `lang="de"`
+
+**CSS3**
+- Layout mit CSS Grid und Flexbox, responsive mit Media Queries
+- CSS-Variablen für Farben und Abstände
+- BEM-Namenskonvention (`block__element--modifier`)
+- Animationen mit `@keyframes`, Rücksicht auf `prefers-reduced-motion`
+
+**JavaScript (ES6+)**
+- DOM-Manipulation: `querySelector`, `createElement`, `createElementNS`, `append`, `textContent`, `classList`
+- Events: `addEventListener` für `submit`, `input`, `change`, `click`, `animationend`; `preventDefault`
+- Formularauswertung mit `FormData`
+- Array-Methoden: `forEach`, `filter`, `sort`, `some`, `push`, `Object.values`
+- String-Methoden: `trim`, `toLowerCase`, `includes`, `split`, `localeCompare`
+- Moderne Syntax: Arrow Functions, Template Literals, Destrukturierung, Spread-Operator
+- Timer: `setTimeout`, `clearTimeout`
+- Laden der Skripte mit `defer`, Strict Mode
 
 Keine Bibliotheken, kein Framework, keine externen Ressourcen.
 
@@ -130,6 +148,8 @@ ligatabelle/
 ├── README.md
 ├── css/
 │   └── style.css     # Gestaltung
+├── docs/
+│   └── screenshot.png
 └── js/
     ├── data.js       # Teams und Startdaten (8 Spiele)
     ├── league.js     # Fachlogik: Tabelle, Validierung, Filter
@@ -144,7 +164,7 @@ ligatabelle/
 
 ## 📸 Screenshot
 
-![Screenshot der Ligatabelle](docs/screenshot.png)
+![Screenshot der Ligatabelle](docs/Ligatabelle.png)
 
 ---
 
@@ -154,8 +174,18 @@ ligatabelle/
 
 **Wofür:**
 
-- Code-Vorschläge für komplexere Aufgaben, die ich selbst umgesetzt und getestet habe
-- Erklärung von Konzepten, die mir unklar waren
+- Planung der Aufgabe: wie man das Projekt sinnvoll aufbaut und worauf man bei der Umsetzung achten sollte
+- Umsetzung eigener Toast-Benachrichtigungen ohne externe Bibliotheken und typische Stolperstellen dabei
+- Vertiefte Erklärung der Array-Methoden und welche Methode sich für welche Aufgabe eignet
+- Arbeit mit Formularen über `FormData`
+- Code-Beispiele zu diesen Themen, die ich nachvollzogen, selbst umgesetzt und an mein Projekt angepasst habe
+- Hilfe bei der Fehlersuche
+
+**Weitere Hilfsmittel:**
+
+- Kursunterlagen von Patrick Baudach (Hochschule Hannover)
+- [learn.javascript.ru](https://learn.javascript.ru)
+- [w3schools.com](https://www.w3schools.com)
 
 ---
 
